@@ -71,152 +71,144 @@ const CreateBill = () => {
           <div className="row align-items-center justify-content-center">
             <div className="bg-white rounded col-md-9 p-4 mt-2">
               <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="d-flex gap-5">
-                  <div>
-                    <div className="form-group mt-3">
-                      <label className="lable-fw-size">
-                        Date <span className="text-danger">*</span>
-                      </label>
-                      <input
-                        {...register("date", { required: true })}
-                        type="date"
-                        className="form-control mt-1 form-fs form-label-border p-2"
-                        placeholder="Enter date"
-                      />
-                    </div>
-                    <div className="form-group mt-3">
-                      <label className="lable-fw-size">
-                        Bill No<span className="text-danger">*</span>
-                      </label>
-                      <input
-                        {...register("billNo", { required: true })}
-                        type="text"
-                        className="form-control mt-1 form-fs form-label-border p-2"
-                        placeholder="Enter Bill No"
-                      />
-                    </div>
-                    <div className="form-group mt-3">
-                      <label className="lable-fw-size">
-                        Firm Name<span className="text-danger">*</span>
-                      </label>
-                      <select
-                        {...register("firmName", { required: true })}
-                        className="form-control mt-1 form-fs form-label-border p-2"
-                      >
-                        <option value="">Select Firm Name</option>
-                        {customers?.map((el, key) => {
-                          return (
-                            <React.Fragment key={key}>
-                              <option value={el._id}>{el.firmName}</option>
-                            </React.Fragment>
-                          );
-                        })}
-                      </select>
-                    </div>
-                    <div className="form-group mt-3">
-                      <label className="lable-fw-size">
-                        Product Name<span className="text-danger">*</span>
-                      </label>
-                      <input
-                        {...register("productName", { required: true })}
-                        type="text"
-                        className="form-control mt-1 form-fs form-label-border p-2"
-                        placeholder="Enter Product Name"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <div className="form-group mt-3">
-                      <label className="lable-fw-size">
-                        HSN/SAC <span className="text-danger">*</span>
-                      </label>
-                      <input
-                        {...register("productCode", { required: true })}
-                        type="text"
-                        className="form-control mt-1 form-fs form-label-border p-2"
-                        placeholder="Enter HSN/SAC"
-                      />
-                    </div>
-                    <div className="form-group mt-3">
-                      <label className="lable-fw-size">
-                        Quantity <span className="text-danger">*</span>
-                      </label>
-                      <input
-                        {...register("quantity", { required: true })}
-                        type="text"
-                        className="form-control mt-1 form-fs form-label-border p-2"
-                        placeholder="Enter Quantity"
-                      />
-                    </div>
-                    <div className="form-group mt-3">
-                      <label className="lable-fw-size">
-                        Rate <span className="text-danger">*</span>
-                      </label>
-                      <input
-                        {...register("rate", { required: true })}
-                        type="text"
-                        className="form-control mt-1 form-fs form-label-border p-2"
-                        placeholder="Enter Rate"
-                      />
-                    </div>
-                    <div className="form-group mt-3">
-                      <label className="lable-fw-size">
-                        GST% <span className="text-danger">*</span>
-                      </label>
-                      <input
-                        {...register("gstPercentage", { required: true })}
-                        type="text"
-                        className="form-control mt-1 form-fs form-label-border p-2"
-                        placeholder="Enter GST %"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <div className="form-group mt-3">
-                      <label className="lable-fw-size">
-                        Sub Total <span className="text-danger">*</span>
-                      </label>
-                      <input
-                        {...register("subTotal", { required: true })}
-                        type="text"
-                        className="form-control mt-1 form-fs form-label-border p-2"
-                        placeholder="Enter Sub Total"
-                      />
-                    </div>
-                    <div className="form-group mt-3">
-                      <label className="lable-fw-size">
-                        CGST <span className="text-danger">*</span>
-                      </label>
-                      <input
-                        {...register("cgst", { required: true })}
-                        type="text"
-                        className="form-control mt-1 form-fs form-label-border p-2"
-                        placeholder="Enter CGST"
-                      />
-                    </div>
-                    <div className="form-group mt-3">
-                      <label className="lable-fw-size">
-                        SGST <span className="text-danger">*</span>
-                      </label>
-                      <input
-                        {...register("sgst", { required: true })}
-                        type="text"
-                        className="form-control mt-1 form-fs form-label-border p-2"
-                        placeholder="Enter SGST"
-                      />
-                    </div>
-                    <div className="form-group mt-3">
-                      <label className="lable-fw-size">
-                        Total <span className="text-danger">*</span>
-                      </label>
-                      <input
-                        {...register("total", { required: true })}
-                        type="text"
-                        className="form-control mt-1 form-fs form-label-border p-2"
-                        placeholder="Enter Total"
-                      />
-                    </div>
-                  </div>
+                <div className="form-group mt-3">
+                  <label className="lable-fw-size">
+                    Date <span className="text-danger">*</span>
+                  </label>
+                  <input
+                    {...register("date", { required: true })}
+                    type="date"
+                    className="form-control mt-1 form-fs form-label-border p-2"
+                    placeholder="Enter date"
+                  />
+                </div>
+                <div className="form-group mt-3">
+                  <label className="lable-fw-size">
+                    Bill No<span className="text-danger">*</span>
+                  </label>
+                  <input
+                    {...register("billNo", { required: true })}
+                    type="text"
+                    className="form-control mt-1 form-fs form-label-border p-2"
+                    placeholder="Enter Bill No"
+                  />
+                </div>
+                <div className="form-group mt-3">
+                  <label className="lable-fw-size">
+                    Firm Name<span className="text-danger">*</span>
+                  </label>
+                  <select
+                    {...register("firmName", { required: true })}
+                    className="form-control mt-1 form-fs form-label-border p-2"
+                  >
+                    <option value="">Select Firm Name</option>
+                    {customers?.map((el, key) => {
+                      return (
+                        <React.Fragment key={key}>
+                          <option value={el._id}>{el.firmName}</option>
+                        </React.Fragment>
+                      );
+                    })}
+                  </select>
+                </div>
+                <div className="form-group mt-3">
+                  <label className="lable-fw-size">
+                    Product Name<span className="text-danger">*</span>
+                  </label>
+                  <input
+                    {...register("productName", { required: true })}
+                    type="text"
+                    className="form-control mt-1 form-fs form-label-border p-2"
+                    placeholder="Enter Product Name"
+                  />
+                </div>
+                <div className="form-group mt-3">
+                  <label className="lable-fw-size">
+                    HSN/SAC <span className="text-danger">*</span>
+                  </label>
+                  <input
+                    {...register("productCode", { required: true })}
+                    type="text"
+                    className="form-control mt-1 form-fs form-label-border p-2"
+                    placeholder="Enter HSN/SAC"
+                  />
+                </div>
+                <div className="form-group mt-3">
+                  <label className="lable-fw-size">
+                    Quantity <span className="text-danger">*</span>
+                  </label>
+                  <input
+                    {...register("quantity", { required: true })}
+                    type="text"
+                    className="form-control mt-1 form-fs form-label-border p-2"
+                    placeholder="Enter Quantity"
+                  />
+                </div>
+                <div className="form-group mt-3">
+                  <label className="lable-fw-size">
+                    Rate <span className="text-danger">*</span>
+                  </label>
+                  <input
+                    {...register("rate", { required: true })}
+                    type="text"
+                    className="form-control mt-1 form-fs form-label-border p-2"
+                    placeholder="Enter Rate"
+                  />
+                </div>
+                <div className="form-group mt-3">
+                  <label className="lable-fw-size">
+                    GST% <span className="text-danger">*</span>
+                  </label>
+                  <input
+                    {...register("gstPercentage", { required: true })}
+                    type="text"
+                    className="form-control mt-1 form-fs form-label-border p-2"
+                    placeholder="Enter GST %"
+                  />
+                </div>
+                <div className="form-group mt-3">
+                  <label className="lable-fw-size">
+                    Sub Total <span className="text-danger">*</span>
+                  </label>
+                  <input
+                    {...register("subTotal", { required: true })}
+                    type="text"
+                    className="form-control mt-1 form-fs form-label-border p-2"
+                    placeholder="Enter Sub Total"
+                  />
+                </div>
+                <div className="form-group mt-3">
+                  <label className="lable-fw-size">
+                    CGST <span className="text-danger">*</span>
+                  </label>
+                  <input
+                    {...register("cgst", { required: true })}
+                    type="text"
+                    className="form-control mt-1 form-fs form-label-border p-2"
+                    placeholder="Enter CGST"
+                  />
+                </div>
+                <div className="form-group mt-3">
+                  <label className="lable-fw-size">
+                    SGST <span className="text-danger">*</span>
+                  </label>
+                  <input
+                    {...register("sgst", { required: true })}
+                    type="text"
+                    className="form-control mt-1 form-fs form-label-border p-2"
+                    placeholder="Enter SGST"
+                  />
+                </div>
+                <div className="form-group mt-3">
+                  <label className="lable-fw-size">
+                    Total <span className="text-danger">*</span>
+                  </label>
+                  <input
+                    {...register("total", { required: true })}
+                    type="text"
+                    className="form-control mt-1 form-fs form-label-border p-2"
+                    placeholder="Enter Total"
+                  />
                 </div>
                 <div className="form-group mt-3">
                   <label className="lable-fw-size">
